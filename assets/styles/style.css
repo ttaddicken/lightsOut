@@ -1,0 +1,11 @@
+.gridLimit{
+    width:500px;
+}
+.cell{
+    border: 5px solid black;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
