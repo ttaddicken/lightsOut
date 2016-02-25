@@ -15,7 +15,7 @@ app.controller('MainController', function ($scope) {
         }
     }
     
-    Scope.findNeighbor = function (cell,g) {
+    $scope.findNeighbor = function (cell,g) {
         // isNorth
         if(cell.col > 0){
             cell.neighbors.push($scope.grid[cell.col-1][cell.row])
@@ -33,11 +33,11 @@ app.controller('MainController', function ($scope) {
           cell.neighbors.push($scope.grid[cell.col][cell.row+1])  
         }
     }
-    for(var row in $scope.grid){
-        var currentRow = $scope.grid[row];
-        for(var i=0; i<currentRow.length; i++){
-            var currentCell = currentRow.length;
-            $scope.findNeighbor(cell,currentRow.length)
-        }
-    }
+    // for(var row in $scope.grid){
+    //     var currentRow = $scope.grid[row];
+    //     for(var i=0; i<currentRow.length; i++){
+    //         var currentCell = currentRow.length;
+    //         $scope.findNeighbor(cell,currentRow.length)
+    //     }
+    // }
 });
