@@ -15,23 +15,17 @@
     </form>
     <!--Grid size end-->
 
-    <!--Form for grid cell selection start-->
-    <form ng-submit="selectCell(x,y)">
-        <input type="number" placeholder="enter column">
-        <input type="number" placeholder="enter row">
-        <button>Select Cell</button>
-    </form>
-    <!--grid cell selection end-->
+
 
     <!--display grid-->
     <!--container cell must be changed for size to account for wrap-->
     <div class="gridLimit col-sm-6 col-sm-offset-3">
         <!--end of container for wrap-->
-        <div class="cell" ng-repeat="cell in grid" ngclass>
-          
+        <div ng-repeat="row in grid">
+            <div class="cell" ng-repeat="cell in row" ng-class="{'on':cell.isOn}" ng-click="selectCell(cell)">
                 Column:{{cell.colum}} Row:{{cell.row}}
-           
             </div>
+        </div>
     </div>
     <!--end display grid-->
 
