@@ -1,11 +1,17 @@
 app.controller('MainController', function ($scope) {
     $scope.test = "angular works";
     $scope.grid = [];
-    $scope.limit= 0;
+    $scope.limit = 0;
+    $scope.width = 100
 
 
 
     $scope.makegrid = function (g) {
+        $scope.grid = []
+        if (g > 6) {
+            g = 6;
+            $scope.g = 6;
+        }
         for (var i = 0; i < g; i++) {
             var colum = i
             $scope.grid[colum] = [];
@@ -14,7 +20,7 @@ app.controller('MainController', function ($scope) {
                 $scope.grid[colum].push({ neighbors: [], colum: colum, row: row })
             }
         }
-        g = g-1;
+        g = g - 1;
         for (var rownum in $scope.grid) {
             var currentRow = $scope.grid[rownum];
             for (var i = 0; i < currentRow.length; i++) {
@@ -32,17 +38,17 @@ app.controller('MainController', function ($scope) {
         }
         // isSouth
         if (cell.colum < g) {
-            console.log('Going south', cell)            
+            console.log('Going south', cell)
             cell.neighbors.push($scope.grid[cell.colum + 1][cell.row])
         }
         // isEast
         if (cell.row > 0) {
-            console.log('Going East', cell)            
+            console.log('Going East', cell)
             cell.neighbors.push($scope.grid[cell.colum][cell.row - 1])
         }
         // isWest
         if (cell.row < g) {
-            console.log('Going West', cell)            
+            console.log('Going West', cell)
             cell.neighbors.push($scope.grid[cell.colum][cell.row + 1])
         }
     }
