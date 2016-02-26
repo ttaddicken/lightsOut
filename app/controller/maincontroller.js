@@ -1,6 +1,7 @@
 app.controller('MainController', function ($scope) {
     $scope.test = "angular works";
     $scope.grid = [];
+    $scope.limit= 0;
 
 
 

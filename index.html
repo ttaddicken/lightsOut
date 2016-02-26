@@ -19,7 +19,7 @@
 
     <!--display grid-->
     <!--container cell must be changed for size to account for wrap-->
-    <div class="gridLimit col-sm-6 col-sm-offset-3">
+    <div style="width: {{width*g+30}}," class="col-sm-6 col-sm-offset-3">
         <!--end of container for wrap-->
         <div ng-repeat="row in grid">
             <div class="cell" ng-repeat="cell in row" ng-class="{'on':cell.isOn}" ng-click="selectCell(cell)">
